@@ -1,0 +1,38 @@
+.withSideDrawer--root {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.withSideDrawer--drawer {
+  position: absolute;
+  height: 100%;
+  width: 200px;
+  transition: transform 0.4s, box-shadow 0.8s;
+  overflow: auto;
+  transform: translateX(-200px);
+  box-shadow: black 0 0 0px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.withSideDrawer--content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.4s;
+  overflow: auto;
+  z-index: 1;
+}
+
+.withSideDrawer--open > .withSideDrawer--drawer {
+  transform: translateX(0px);
+  box-shadow: #8889 0 0 25px
+}
+
+.withSideDrawer--open > .withSideDrawer--content {
+  transform: translateX(200px);
+}

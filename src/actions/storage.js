@@ -1,0 +1,2 @@
+const SAVE_STATE = 'SAVE_STATE';
+const LOAD_STATE = 'LOAD_STATE';
