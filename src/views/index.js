@@ -6,6 +6,8 @@ import { ALL_VIEWS } from '../reducers/view';
 import Home from './home';
 import Contacts from './contacts';
 import Countdown from './countdown';
+import Site from './site';
+import Sessions from './sessions';
 
 const mapStateToProps = (state) => ({
   currentView: ALL_VIEWS[state.view.index],
@@ -17,9 +19,14 @@ const Views = ({ currentView }) => {
       return <Countdown />;
     case 'contacts':
       return <Contacts />;
+    case 'sessions':
+      return <Sessions />;
+    case 'site':
+      return <Site />;
     case 'home':
-    default:
       return <Home />;
+    default:
+      return <h2>Error, page not found</h2>
   }
 }
 

@@ -4,6 +4,9 @@ export const ALL_VIEWS = [
   'home',
   'contacts',
   'date',
+  'players',
+  'sessions',
+  'site',
 ];
 
 const INITAL_STATE = {
