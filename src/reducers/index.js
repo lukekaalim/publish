@@ -3,13 +3,13 @@ import { combineReducers } from 'redux';
 import auth from './auth';
 import game from './game/';
 import view from './view';
-import edit from './edit';
+import dirty from './dirty';
 
 const reducers = combineReducers({
   auth,
   view,
   game,
-  edit,
+  dirty,
 });
 
 export default reducers;

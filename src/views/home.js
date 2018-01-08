@@ -2,14 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Button } from 'rmwc/Button';
+import { TextField } from 'rmwc/TextField';
 
 import '../layouts/style.css';
+import '../components/style.css';
 
 import { editName } from '../actions/game/meta';
 import { editSecret, editID } from '../actions/auth';
 
-import WithPublish from '../connectors/WithPublish';
-import MaxWidthTextField from '../components/MaxWidthTextField';
+import WithPublish from '../connectors/withPublish';
 import VerticalSpacer from '../components/VerticalSpacer';
 
 const mapDispatchToProps = {
@@ -22,7 +23,7 @@ const mapStateToProps = (state) => ({
   gameName: state.game.meta.name,
   authSecret: state.auth.secret,
   authID: state.auth.id,
-  changes: state.edit,
+  changes: state.dirty,
 });
 
 const Home = ({
@@ -39,23 +40,26 @@ const Home = ({
     <h3>Meta Info</h3>
     <p>Edit the text that is used as your campaign name on your website.
     </p>
-    <MaxWidthTextField
+    <TextField
       label="Your Campaign's name"
       value={gameName}
+      className="maxWidth"
       onChange={event => editName(event.target.value)}
     />
     <h3>Authentication</h3>
     <p>You need to have a valid <strong>ID</strong> and <strong>SECRET </strong>
     to upload data to the website. Contact your website's administator if you
     dont have or don't know what these are. </p>
-    <MaxWidthTextField
+    <TextField
       label="Your ID"
       value={authID}
+      className="maxWidth"
       onChange={event => editID(event.target.value)}
     />
-    <MaxWidthTextField
+    <TextField
       label="Your Secret"
       value={authSecret}
+      className="maxWidth"
       onChange={event => editSecret(event.target.value)}
     />
     <h3>Publish</h3>
