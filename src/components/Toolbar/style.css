@@ -1,0 +1,24 @@
+@keyframes toolBar--toolRoot__slideUpAnimation {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.toolBar--root {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  overflow: hidden;
+}
+
+.toolBar--toolRoot {
+  margin: 10px;
+  animation: toolBar--toolRoot__slideUpAnimation 0.25s backwards;
+}

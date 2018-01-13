@@ -1,7 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Toolbar, ToolbarRow, ToolbarTitle, ToolbarMenuIcon, ToolbarFixedAdjust } from 'rmwc/Toolbar';
+import {
+  Toolbar,
+  ToolbarRow,
+  ToolbarTitle,
+  ToolbarMenuIcon,
+  ToolbarFixedAdjust,
+  ToolbarSection,
+} from 'rmwc/Toolbar';
 import './style.css';
+
+import { clealLocalStorage } from '../../lib/localstorage';
 
 import { setDrawerOpen } from '../../actions/view';
 
@@ -17,8 +26,13 @@ const Topbar = ({ openDrawer, gameName }) => (
   <span>
     <Toolbar fixed waterfall>
     	<ToolbarRow>
-        <ToolbarMenuIcon use="menu" onClick={openDrawer}/>
-    		<ToolbarTitle>{gameName}</ToolbarTitle>
+        <ToolbarSection alignStart>
+          <ToolbarMenuIcon use="menu" onClick={openDrawer}/>
+      		<ToolbarTitle>{gameName}</ToolbarTitle>
+        </ToolbarSection>
+        <ToolbarSection alignEnd>
+          <ToolbarMenuIcon use="delete_forever" onClick={clealLocalStorage}/>
+        </ToolbarSection>
     	</ToolbarRow>
     </Toolbar>
     <ToolbarFixedAdjust/>
