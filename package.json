@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "aws-sdk": "^2.176.0",
+    "aws-sdk": "^2.179.0",
     "classnames": "^2.2.5",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
-    "rmwc": "^0.0.1-rc7"
+    "rmwc": "^0.0.1-rc13"
   },
   "scripts": {
     "start": "react-scripts start",
