@@ -1,6 +1,3 @@
-// Debounces a function based on time, but also passes in the total amount of
-// calls that were debounced during that time.
-
 const debounce = (func, wait = 100) => {
   let timeout = null;
   return (...args) => {
@@ -12,6 +9,9 @@ const debounce = (func, wait = 100) => {
     }
   };
 }
+
+// Debounces a function based on time, but also passes in the total amount of
+// calls that were debounced during that time.
 
 const incrementalDebounce = (func, wait = 100) => {
   let debounced = 0;
