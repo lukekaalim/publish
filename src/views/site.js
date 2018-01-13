@@ -10,9 +10,9 @@ import {
   subtitle,
   title,
   useGameNameAsTitle,
+  landingMode,
 } from '../reducers/game/site';
-
-import { setLandingMode } from '../actions/game/site';
+import { passTargetValue, passTargetChecked } from '../lib/forms';
 
 import '../layouts/style.css';
 
@@ -25,7 +25,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  setLandingMode,
+  setLandingMode: landingMode.edit,
   setUseGameNameAsTitle: useGameNameAsTitle.edit,
   editSubtitle: subtitle.edit,
   editTitle: title.edit,
@@ -48,14 +48,14 @@ const Site = ({
       className="maxWidth"
       value={landingMode}
       label="Landing Mode"
-      onChange={event => setLandingMode(event.target.value)}
+      onChange={passTargetValue(setLandingMode)}
       options={LANDING_MODES.map((label, value) => ({ label, value }) )}
     />
     <Switch
       className="maxWidth"
       label="Use Game Name as Title"
       checked={useGameNameAsTitle}
-      onChange={event => setUseGameNameAsTitle(event.target.checked)}
+      onChange={passTargetChecked(setUseGameNameAsTitle)}
     />
     <TextField
       className="maxWidth"
@@ -64,15 +64,14 @@ const Site = ({
       value={useGameNameAsTitle ? gameName : title}
       withTrailingIcon={useGameNameAsTitle && <TextFieldIcon use="lock"/>}
       disabled={useGameNameAsTitle}
-      onChange={event => editTitle(event.target.value)}
-
+      onChange={passTargetValue(editTitle)}
     />
     <TextField
       box
       value={subtitle}
       className="maxWidth"
       label="Subtitle"
-      onChange={event => editSubtitle(event.target.value)}
+      onChange={passTargetValue(editSubtitle)}
     />
     <TextFieldHelperText>Optional</TextFieldHelperText>
   </div>

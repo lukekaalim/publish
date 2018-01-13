@@ -6,7 +6,7 @@ import { Fab } from 'rmwc/Fab'
 import { Table } from '../components/Table';
 import Toolbar from '../components/Toolbar';
 import { editSession, removeSession, addSession } from '../actions/game/sessions';
-import '../components/Table/style.css';
+//import '../components/Table/style.css';
 
 const mapStateToProps = (state) => ({
   sessions: state.game.sessions,
