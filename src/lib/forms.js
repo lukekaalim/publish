@@ -1,9 +1,9 @@
 // todo: think of better names
 
-const textField = (func) => (event) => func(input.target.value);
-const checkbox = (func) => (event) => func(input.target.checked);
+const passTargetValue = (func) => (event) => func(event.target.value);
+const passTargetChecked = (func) => (event) => func(event.target.checked);
 
 export {
-  textField,
-  checkbox,
+  passTargetValue,
+  passTargetChecked,
 };
