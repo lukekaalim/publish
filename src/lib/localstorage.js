@@ -3,4 +3,10 @@ const clealLocalStorage = () => {
   window.location.reload();
 }
 
-export { clealLocalStorage };
+const retrieveLocalStorage = () => (
+  JSON.parse(
+    window.localStorage.getItem('localState')
+  ) || {}
+);
+
+export { clealLocalStorage, retrieveLocalStorage };

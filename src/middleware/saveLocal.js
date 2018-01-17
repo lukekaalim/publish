@@ -1,8 +1,14 @@
 const saveLocal = ({ getState }) => next => action => {
   const returnValue = next(action);
   if (action.saveLocal) {
-    console.log(window.localStorage);
-    const stateAsJSON = JSON.stringify(getState());
+    const oldState = getState();
+    const stateAsJSON = JSON.stringify({
+      ...oldState,
+      view: {
+        ...oldState.view,
+        isDrawOpen: false,
+      }
+    });
     window.localStorage.setItem('localState', stateAsJSON);
   }
   return returnValue;

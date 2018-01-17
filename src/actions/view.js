@@ -4,6 +4,7 @@ export const SET_DRAWER_OPEN = 'SET_DRAWER_OPEN';
 export const switchIndex = (newIndex) => ({
   type: SWITCH_VIEW,
   index: newIndex,
+  saveLocal: true,
 });
 
 export const setDrawerOpen = (isDrawOpen) => ({

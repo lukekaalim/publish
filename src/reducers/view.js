@@ -7,6 +7,7 @@ export const ALL_VIEWS = [
   'players',
   'sessions',
   'site',
+  'test',
 ];
 
 const INITAL_STATE = {

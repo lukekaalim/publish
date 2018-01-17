@@ -16,13 +16,14 @@ import { setDrawerOpen } from '../../actions/view';
 
 const mapStateToProps = (state) => ({
   gameName: state.game.meta.name,
+  edits: state.dirty,
 });
 
 const mapDispatchToProps = {
   openDrawer: () => setDrawerOpen(true),
 };
 
-const Topbar = ({ openDrawer, gameName }) => (
+const Topbar = ({ openDrawer, gameName, edits }) => (
   <span>
     <Toolbar fixed waterfall>
     	<ToolbarRow>
@@ -31,6 +32,7 @@ const Topbar = ({ openDrawer, gameName }) => (
       		<ToolbarTitle>{gameName}</ToolbarTitle>
         </ToolbarSection>
         <ToolbarSection alignEnd>
+          <div>Edits: {edits}</div>
           <ToolbarMenuIcon use="delete_forever" onClick={clealLocalStorage}/>
         </ToolbarSection>
     	</ToolbarRow>

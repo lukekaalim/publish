@@ -8,6 +8,7 @@ import Contacts from './contacts';
 import Countdown from './countdown';
 import Site from './site';
 import Sessions from './sessions';
+import Test from './test';
 
 const mapStateToProps = (state) => ({
   currentView: ALL_VIEWS[state.view.index],
@@ -25,6 +26,8 @@ const Views = ({ currentView }) => {
       return <Site />;
     case 'home':
       return <Home />;
+    case 'test':
+      return <Test />;
     default:
       return <h2>Error, page not found</h2>
   }
