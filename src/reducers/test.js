@@ -6,5 +6,5 @@ const INITAL_STATE = {};
 export default buildKeyValueSetReducer({
   EDIT: EDIT_TEST,
   CLEAR: CLEAR_TEST,
-  RESET: RESET_TEST
+  RESET: RESET_TEST,
 }, INITAL_STATE);
