@@ -15,9 +15,9 @@ const Table = ({
 
 const Column = (columnContents, index) => <th key={index}>{columnContents}</th>;
 
-const Row = (cells, index) => <tr key={index}> {cells.map(Cell)} </tr>
+const Row = (cells, index) => <tr key={index}>{cells.map(Cell)}</tr>
 
-const Cell = (cellContents, index) => <td key={index}> {cellContents} </td>
+const Cell = (cellContents, index) => <td key={index}>{cellContents}</td>
 
 export {
   Table,

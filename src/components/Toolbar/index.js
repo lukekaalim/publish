@@ -7,6 +7,7 @@ const ToolBar = ({ tools }) => (
   <div className="toolBar--root">
     {tools.map((tool, index) => (
       <div
+        key={index}
         className="toolBar--toolRoot"
         style={{ animationDelay: `${index * ANIMATION_DELAY}s`}}
         >

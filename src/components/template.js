@@ -12,6 +12,17 @@ const text = (template, props) => (
   />
 );
 
+const color = (template, props) => (
+  <div key={template.key}>
+    <label>{template.label}</label>
+    <input
+      {...props}
+      type="color"
+      value={props.value || ''}
+    />
+  </div>
+)
+
 const enumerable = (template, props) => (
   <Select
     {...props}
@@ -26,6 +37,7 @@ const enumerable = (template, props) => (
 const DEFAULT_MAP = {
   text,
   enum: enumerable,
+  color,
 };
 
 const Template = ({ templates, data, map = DEFAULT_MAP, ...props }) => (

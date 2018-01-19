@@ -1,5 +1,5 @@
-import { buildTypeName } from '../../lib/redux';
-import { spacedToCamelCase } from '../../lib/string';
+import { buildTypeName } from '../lib/redux';
+import { spacedToCamelCase } from '../lib/string';
 
 const list = (name, actionProps) => {
   const camelCaseName = spacedToCamelCase(name);

@@ -14,6 +14,7 @@ const mapDispatchToProps = {
 
 const templates = [
   { type: 'text', key: 'homeYtURL', label: 'Url for Homepage\'s background YouTube video' },
+  { type: 'color', key: 'bgColor', label: 'Background Color for Site' },
 ];
 
 const Test = ({ test, editTest }) => (

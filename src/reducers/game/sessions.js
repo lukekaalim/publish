@@ -9,16 +9,18 @@ const INITAL_STATE = [{ title: 'one' }, { title: 'two'}, {}];
 const sessions = (state = INITAL_STATE, action) => {
   switch(action.type) {
     case ADD_SESSION:
+      return [...state, action.session]
+    case EDIT_SESSION:
       return [
-        ...state,
+        ...state.slice(0, action.index),
         action.session,
+        ...state.slice(action.index + 1),
       ];
     case REMOVE_SESSION:
-      state.splice(action.index, 1);
-      return [...state];
-    case EDIT_SESSION:
-      state[action.index] = action.session;
-      return [...state];
+      return [
+        ...state.slice(0, action.index),
+        ...state.slice(action.index + 1)
+      ];
     default:
       return state;
   }

@@ -1,4 +1,4 @@
-import property from '../higherOrder/property';
+import property from '../../redux/property';
 import { combineReducers } from 'redux';
 
 export const LANDING_MODES = ['basic', 'countdown'];

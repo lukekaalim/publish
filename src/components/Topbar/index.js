@@ -10,6 +10,7 @@ import {
 } from 'rmwc/Toolbar';
 import './style.css';
 
+import { resetGame } from '../../actions/game';
 import { clealLocalStorage } from '../../lib/localstorage';
 
 import { setDrawerOpen } from '../../actions/view';
@@ -21,9 +22,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   openDrawer: () => setDrawerOpen(true),
+  resetGame,
 };
 
-const Topbar = ({ openDrawer, gameName, edits }) => (
+const Topbar = ({ openDrawer, gameName, edits, resetGame }) => (
   <span>
     <Toolbar fixed waterfall>
     	<ToolbarRow>
@@ -33,7 +35,14 @@ const Topbar = ({ openDrawer, gameName, edits }) => (
         </ToolbarSection>
         <ToolbarSection alignEnd>
           <div>Edits: {edits}</div>
-          <ToolbarMenuIcon use="delete_forever" onClick={clealLocalStorage}/>
+          <ToolbarMenuIcon
+            use="delete_forever"
+            onClick={clealLocalStorage}
+          />
+          <ToolbarMenuIcon
+            use="delete"
+            onClick={resetGame}
+          />
         </ToolbarSection>
     	</ToolbarRow>
     </Toolbar>

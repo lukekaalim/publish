@@ -1,4 +1,4 @@
-import { buildTypeName } from '../../lib/redux';
+import { buildTypeName } from '../lib/redux';
 /*
   A simple function that constructs all the objects needed to create a simple
   count in redux.

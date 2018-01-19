@@ -22,25 +22,25 @@ const sessionToRow = (editSession, removeSession) => (session, index) => (
   [
     <input
       type="text"
-      value={session.title}
+      value={session.title || ''}
       onChange={event => editSession(index, { ...session, title: event.target.value })}
     />,
     <input
       type="date"
-      value={session.date}
+      value={session.date || ''}
       onChange={event => editSession(index, { ...session, date: event.target.value })}
     />,
     <textarea
-      value={session.shortDesc}
+      value={session.shortDesc || ''}
       onChange={event => editSession(index, { ...session, shortDesc: event.target.value })}
     />,
     <textarea
-      value={session.longDesc}
+      value={session.longDesc || ''}
       onChange={event => editSession(index, { ...session, longDesc: event.target.value })}
     />,
     <input
       type="color"
-      value={session.color}
+      value={session.color || ''}
       onChange={event => editSession(index, { ...session, color: event.target.value })}
     />,
     <button onClick={() => removeSession(index)}>delete</button>,

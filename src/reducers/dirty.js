@@ -1,4 +1,4 @@
-import count from './higherOrder/count';
+import count from '../redux/count';
 
 export const dirty = count('dirty', 0);
 
