@@ -9,6 +9,7 @@ import Countdown from './countdown';
 import Site from './site';
 import Sessions from './sessions';
 import Test from './test';
+import Config from './config';
 
 const mapStateToProps = (state) => ({
   currentView: ALL_VIEWS[state.view.index],
@@ -28,6 +29,8 @@ const Views = ({ currentView }) => {
       return <Home />;
     case 'test':
       return <Test />;
+    case 'config':
+      return <Config />;
     default:
       return <h2>Error, page not found</h2>
   }

@@ -6,7 +6,7 @@ import { dirty } from '../reducers/dirty';
 const mapStateToProps = (state) => ({
   id: state.auth.id,
   secret: state.auth.secret,
-  region: state.auth.region,
+  region: state.config.region,
   game: state.game,
 });
 

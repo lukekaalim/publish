@@ -6,7 +6,6 @@ import { Fab } from 'rmwc/Fab'
 import { Table } from '../components/Table';
 import Toolbar from '../components/Toolbar';
 import { editSession, removeSession, addSession } from '../actions/game/sessions';
-//import '../components/Table/style.css';
 
 const mapStateToProps = (state) => ({
   sessions: state.game.sessions,
@@ -52,18 +51,18 @@ const Sessions = ({ sessions, editSession, removeSession, addSession }) => (
     <Table
       className="table--root"
       columns={[
-        <div className="table--column__resizable">Title</div>,
-        <div className="table--column__resizable">Date</div>,
-        <div className="table--column__resizable">Short Description</div>,
-        <div className="table--column__resizable">Long Description</div>,
-        <div className="table--column__resizable">Color</div>,
-      ]}
+        'Title',
+        'Date',
+        'Short Description',
+        'Long Description',
+        'Color',
+      ].map(columnName =>
+        <div key={columnName} className="table--column__resizable">{columnName}</div>
+      )}
       rows={sessions.map(sessionToRow(editSession, removeSession))}
     />
     <Toolbar tools={[
       <Fab onClick={() => addSession({})}>add</Fab>,
-      <Fab onClick={() => addSession({})}>filter</Fab>,
-      <Fab onClick={() => addSession({})}>settings</Fab>,
     ]} />
   </div>
 );

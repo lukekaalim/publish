@@ -1,14 +1,19 @@
-import { EDIT_ID, EDIT_SECRET } from '../actions/auth';
+import { EDIT_ID, EDIT_SECRET, EDIT_BUCKET } from '../actions/auth';
 
 const INITAL_STATE = {
   id: '',
   secret: '',
-  bucket: '',
+  bucket: 'default bucket',
   region: 'ap-southeast-2',
 };
 
 const auth = (state = INITAL_STATE, action) => {
   switch (action.type) {
+    case EDIT_BUCKET:
+      return {
+        ...state,
+        bucket: action.bucket,
+      };
     case EDIT_ID:
       return {
         ...state,

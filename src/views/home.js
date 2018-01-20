@@ -11,6 +11,7 @@ import { editName } from '../actions/game/meta';
 import { editSecret, editID } from '../actions/auth';
 
 import WithPublish from '../connectors/withPublish';
+import WithLocalSave from '../connectors/withLocalSave';
 import VerticalSpacer from '../components/VerticalSpacer';
 
 const mapDispatchToProps = {
@@ -46,28 +47,21 @@ const Home = ({
       className="maxWidth"
       onChange={event => editName(event.target.value)}
     />
-    <h3>Authentication</h3>
-    <p>You need to have a valid <strong>ID</strong> and <strong>SECRET </strong>
-    to upload data to the website. Contact your website's administator if you
-    dont have or don't know what these are. </p>
-    <TextField
-      label="Your ID"
-      value={authID}
-      className="maxWidth"
-      onChange={event => editID(event.target.value)}
-    />
-    <TextField
-      label="Your Secret"
-      value={authSecret}
-      className="maxWidth"
-      onChange={event => editSecret(event.target.value)}
-    />
     <h3>Publish</h3>
     <p>Your changes here will only save locally, press the button below to
     upload your changes to the website so all your players can see them!</p>
     <p style={{ color: 'grey' }}>You have {changes} unsaved changes</p>
     <WithPublish render={publish => (
-      <Button raised onClick={publish}>Publish to Live</Button>
+      <Button raised onClick={publish}>
+        Publish to Live Site
+      </Button>
+    )}/>
+    <p>Additionally, you can save all of your changes to a
+    local <strong>'.json'</strong> file.</p>
+    <WithLocalSave render={save => (
+      <Button stroked onClick={save}>
+        Publish Locally to JSON
+      </Button>
     )}/>
     <VerticalSpacer />
   </div>

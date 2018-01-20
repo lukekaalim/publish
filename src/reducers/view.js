@@ -2,12 +2,11 @@ import { SWITCH_VIEW, SET_DRAWER_OPEN } from '../actions/view';
 
 export const ALL_VIEWS = [
   'home',
-  'contacts',
-  'date',
   'players',
   'sessions',
   'site',
   'test',
+  'config',
 ];
 
 const INITAL_STATE = {

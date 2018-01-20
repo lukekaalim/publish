@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-  TemporaryDrawer,
-  TemporaryDrawerHeader,
-  TemporaryDrawerContent,
+  Drawer,
+  DrawerHeader,
+  DrawerContent,
 } from 'rmwc/Drawer';
 import {
   ListItem,
@@ -31,17 +31,18 @@ const NavigationDrawer = ({
   gameName,
   switchIndex,
 }) => (
-  <TemporaryDrawer
+  <Drawer
+    temporary
     open={isDrawOpen}
     onClose={closeDrawer}
   >
     <Theme use={'primary-dark-bg text-primary-on-primary'}>
-      <TemporaryDrawerHeader>
+      <DrawerHeader>
         {gameName}
-      </TemporaryDrawerHeader>
+      </DrawerHeader>
 		</Theme>
 
-    <TemporaryDrawerContent>
+    <DrawerContent>
       {
         ALL_VIEWS.map((view, index) => (
           <ListItem
@@ -59,8 +60,8 @@ const NavigationDrawer = ({
           </ListItem>
         ))
       }
-    </TemporaryDrawerContent>
-  </TemporaryDrawer>
+    </DrawerContent>
+  </Drawer>
 );
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationDrawer);

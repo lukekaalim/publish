@@ -13,3 +13,8 @@ export const editSecret = (newSecret) => ({
   secret: newSecret,
   saveLocal: true,
 });
+
+export const editBucket = (newBucket) => ({
+  type: EDIT_BUCKET,
+  bucket: newBucket,
+});
