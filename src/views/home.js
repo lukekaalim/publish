@@ -51,8 +51,12 @@ const Home = ({
     <p>Your changes here will only save locally, press the button below to
     upload your changes to the website so all your players can see them!</p>
     <p style={{ color: 'grey' }}>You have {changes} unsaved changes</p>
+    {
+      process.env.NODE_ENV !== 'production' &&
+      <p style={{ color: 'red' }}>This feature is disabled in Development Mode</p>
+    }
     <WithPublish render={publish => (
-      <Button raised onClick={publish}>
+      <Button raised onClick={publish} disabled={process.env.NODE_ENV !== 'production'}>
         Publish to Live Site
       </Button>
     )}/>
