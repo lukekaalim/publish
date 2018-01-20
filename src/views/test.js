@@ -19,7 +19,9 @@ const templates = [
 
 const Test = ({ test, editTest }) => (
   <div className="narrowCenteredContent">
+    <pre>
     {JSON.stringify(test, null, 3)}
+    </pre>
     <Template
       templates={templates}
       data={test}
