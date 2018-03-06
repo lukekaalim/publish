@@ -2,8 +2,9 @@
   "name": "publish",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
-    "aws-sdk": "^2.185.0",
+    "aws-sdk": "^2.205.0",
     "classnames": "^2.2.5",
     "file-saver": "^1.3.3",
     "react": "^16.1.1",
@@ -13,13 +14,17 @@
     "redux": "^3.7.2",
     "rmwc": "^1.0.2"
   },
+  "devDependencies": {
+    "deploy": "file:../deploy",
+    "redux-devtools": "^3.4.1"
+  },
   "scripts": {
+    "deploy": "deploy",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "redux-devtools": "^3.4.1"
+    "eject": "react-scripts eject",
+    "deploy:tech": "npm run deploy -- --dir=\"./build\" --dest=\"1d9.tech\" --pre=\"admin/\"",
+    "build-deploy:tech": "npm run build && npm run deploy:tech"
   }
 }
