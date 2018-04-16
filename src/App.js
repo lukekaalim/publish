@@ -13,7 +13,7 @@ import 'material-components-web/dist/material-components-web.css';
 import reducers from './reducers';
 import saveLocal from './middleware/saveLocal';
 import trackEdits from './middleware/trackEdits';
-import { loadAwsConfig } from './loaders/awsConfig';
+import { loadConfig } from './actions/config';
 import Views from './views';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -33,17 +33,17 @@ class App extends Component {
 
   componentDidMount() {
     console.log('Application Mounted');
-    loadAwsConfig(store.dispatch);
+    store.dispatch(loadConfig('base'));
   }
 
   render() {
     return (
       <Provider store={store}>
-        <div>
-          <Topbar />
-          <NavigationDrawer />
-          <Views />
-        </div>
+      {[
+        <Topbar />,
+        <NavigationDrawer />,
+        <Views />,
+      ]}
       </Provider>
     );
   }

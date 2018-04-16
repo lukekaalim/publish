@@ -16,7 +16,7 @@ const list = (name, actionProps) => {
   const reducer = (state = [], action) => {
     switch(action.type) {
       case pushType:
-        return [...state, action.[camelCaseName]];
+        return [...state, action[camelCaseName]];
       case removeType:
         state.splice(action.index, 1);
         return [...state];
